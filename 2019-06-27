@@ -1,0 +1,105 @@
+Small but Mighty: 
+
+Let's Encrypt: 11 staff <$4m budgetig, but >100million certs
+
+Authentication via CA: too hard. 
+
+In 2012 - HTTP/2 WG wanted to make https default, but "encryption is too hard"
+
+Cornerstones of a new CA: automated, free, transparent/open, global
+
+Types of certs: DV (domain validation - that's what Let's Encrypt does), OV (asserts control of a domain + organizationsal betting), and EV which is OV plus more
+
+Shorter lifetimes are important for security? Encourage automation, limit damage from key compromise or mis-issuance!
+
+Certificate transparency - you can see all the certs they've done
+
+What can I do? Secure your sites! Deploy HTTPS by default for every site! And Demand the same from your partners!
+############################
+DOD Software Factory with the DOD Enterpreise DevSecOps Initiative:
+Have a LEGO-like get of dev tools and services that can be used to grab hardened and authorized containers. 
+
+Most important thing is creating DevSecOps pipelines so that each DOD service doesn't build their own stack and reinvent the wheel.
+
+They're authorizing, scanning, and signing the containers they're bringing in
+###############################
+Service Mesh and Istio Explained: 
+So one of the challenges is havaing multiple versions of microservices, the network among the microservices, unpredictable failures, etc. Some of this doesn't just come from using K8s.
+
+Sevice mesh provides connection and observation of containers - Istio provides this. 
+
+Just what is a service mesh? helps to unclutter containers
+
+Service mesh: language neutral, dummy initialization, smart attachment to your serivce, visibility
+
+see istio documentation for diagram of how it works
+
+With istio can decide to send all traffic to one version (rather than round robin) or you could send all traffic, except for one specific user to the same thing. No need to redeploy. Just edit some yaml. 
+
+istio.io is place to find out all istio info
+######################################
+The #1 Thing We learned from our devops transformation (US PTO)
+
+devops benefits:
+3000% increase in software changes
+zero downtime from deployments
+100,000+ automated tests
+reduced MTTR
+reduced lead time - from commit to production
+reduced change rate failures - less bugs when deploying
+happier customers!
+
+All of this without shortcuts - meaning still have rigorous testing
+
+Org charts (the way we're organized in gov't) often don't maximize efficient communication
+
+Conway's law - orgs are constrained to prudce designs which are copies of the comm structures of those orgs. 
+
+less handoffs = more efficient - don't do functional alignment. Do project alignment. Each project/product has someone to do dev, ops, certification, etc instead of going back and forth to different orgs.
+
+##############################
+
+Pushed to Higher Standards: reliability and Resiliency in Application dev on AWS:
+
+AWS helps you not need to worry about under or over provisioning. Also, you outsource a lot of your costs - people to manage, power, servers...
+
+but what happens when AWS goes offline?
+
+One thing to do is to spread your servers across muliple AWS regions - needs a balancer
+
+############################
+
+Modernizing Grants.com with Booz Allan and Red Hat - OpenShift and SDP
+
+grants.gov is where you apply for a federal grants
+
+14 year old system
+
+Decided to move to OpenShift for container orchestration and security. Used Red Hat SSO for their single sign on tech.
+
+Booz deploys the system and demonstrates that it meets security standards
+
+OpenShift serves as an accelerator to the deployment process. Previous process used to take 1 year to deliver a microservice. Now deployments can take place within a couple days. 
+
+A benefit is to be able to use pipeline templates and then accredit the pipeline, not the software
+
+Give devs immediate feedback for whether the code meets compliance, security, etc tests so that you're not trying to find them months later when they may no longer be working for you. 
+
+Booz came up with Solutions Delivery Platform Pipeline Framework to not have to keep recreating pipelines every time someone needs it. It contains the things that are always needed by a pipeline. It also has stuff where the user can say, I'm DOD so these things are important to me. Then the Navy inherits those and adds anything specific to the Navy and so forth.
+
+###############
+Security Concerns in Container Runtimes - using the Docker daemon for all tasks is bad for security - they have different security needs
+
+Some of the security features from using podman instead is that you can run as a regular user instead of root. Also, can set the system UID that the root inside the container is mapped to on the host system. 
+
+Also for auditing, it's more secure if someone breaks out of teh container if you're using podman vs docker
+
+There are too many things allowed in standard containers like AUDIT_WRITE, MKNOD, and NET_RAW. Those are OK when developing, but should not be allowed when running - but Docker allows those. 
+
+###############################
+
+Digital Discrimination: Cognitive Bias in Machine Learning
+
+@Mo_Mack
+
+machine models are BUILT to discrimnate from their models. But they are often trained from biased models.
