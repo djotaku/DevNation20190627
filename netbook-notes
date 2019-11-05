@@ -1,0 +1,23 @@
+Podman play basically works like docker-compose
+
+Digital Discrimination
+
+Because of the trained models, people are being rated as low risk of reoffending just because they're white while black people get rated as high risk even if they have done no crimes or less crimes than the white person.
+
+Individual vs Group Fairness or Both
+
+Group fairness: data vs model, we're all equal vs wha tyou see is what you get
+
+Can grab docker containers from the Model Asset Exchange to help train your code.
+
+#####################################################
+
+Clarity in the World of Service Mesh Confusion
+
+Once microservices are deployed they need to talk to each other!
+
+a service mesh is decentrali, programmable applicatino-networking infrastructure that provides resiliency, security, observability, and routing control
+
+it should be considered a foundational API
+
+
